@@ -1,6 +1,7 @@
 <p align="center">
-  <img src="ad72c90f-41b9-494b-b516-bd14b23d49d6.jpg" alt="Krishna Art" width="400">
+  <img src="https://i.ibb.co/7xMrWSY7/tmplpuxung6.jpg" alt="Krishna Art" width="400">
 </p>
+
 
 # 👋 Hi, I'm Shaurya Pratap Singh  
 

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://i.ibb.co/7xMrWSY7/tmplpuxung6.jpg" alt="Krishna Art" width="400">
+  <img src="https://i.ibb.co/jPVF2BB7/tmp6pjugwu7.jpg" alt="Krishna Art" width="400">
 </p>
 
 

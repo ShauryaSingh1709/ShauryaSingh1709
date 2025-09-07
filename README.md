@@ -40,8 +40,8 @@ SOON!!!!
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=akankshadhar2&layout=compact&theme=radical)
 ---
 ## 💼 Project Repositories
-[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=ShauryaSingh1709&repo=Company-10K-Analyzer&theme=radical)](https://github.com/ShauryaSingh1709/PORTFOLIO.)
-[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=akankshadhar2&repo=DINOv2-KAN&theme=radical)](https://github.com/ShauryaSingh1709/Login)
+[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=ShauryaSingh1709&repo=PORTFOLIO.&theme=radical)](https://github.com/ShauryaSingh1709/PORTFOLIO.)
+[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=ShauryaSingh1709&repo=Login&theme=radical)](https://github.com/ShauryaSingh1709/Login)
 
 ---
 

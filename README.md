@@ -1,72 +1,56 @@
-<p align="center">
-  <img src="https://i.ibb.co/4g4ZjbJH/tmp7vgzj1l.jpg" alt="Krishna Art" width="400">
-</p>
+# Hi, I'm Shaurya Pratap Singh! 👋
 
-
-# 👋 Hi, I'm Shaurya Pratap Singh  
-
-💻 **Aspiring AI Developer | Learner**  
-🚀 Passionate about AI, automation, and building innovative projects that make life easier.  
+🚀 Passionate about Artificial Intelligence, Machine Learning, Deep Learning, Web Development, and everything tech! Here’s a snapshot of my skills, projects, and journey in the world of software development.
 
 ---
 
-## 🧑‍💻 About Me  
-- 🎓 **Btech AI DS Student** with a growing interest in **Computer Science & AI**  
-- 🤖 Building personal AI assistants, chatbots, and automation tools  
-- 🌐 Creating interactive websites and web applications  
-- 📚 Currently exploring **More about Coding and Development** 
-- 🎯 Goal: To build impactful AI products & crack top tech opportunities  
+## 👩‍💻 About Me
+- 🎓 **Education**: Bachelor of Technology in Artificial Intelligence and Data Science from CGC University, Mohali
+- 💼 **Current Role**: Currently Studying  
+- 🏅 **Research Interests**: In Artificial Intelligence and Data Science
+- 🌎 **Location**: Mohali, India  
 
 ---
 
-## 🔧 Tech Stack  
-**Languages:**  
-'Python' 
-'Java'
-'HTML'
-'CSS'
-'JS'
+## 🛠️ Tech Skills
 
-**Frameworks & Tools:**  
-'Pyrogram'
-'Telethon'
-'SQL'
-'MongoDB'
-'OpenCV'
+### **Languages**
+![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white)
+![Java](https://img.shields.io/badge/-Java-007396?style=flat&logo=java&logoColor=white)
+![Go](https://img.shields.io/badge/-Go-00ADD8?style=flat&logo=go&logoColor=white)
+
+### **Web Development**
+![HTML](https://img.shields.io/badge/-HTML-E34F26?style=flat&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/-CSS-1572B6?style=flat&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![Flask](https://img.shields.io/badge/-Flask-000000?style=flat&logo=flask&logoColor=white)
+![FastAPI](https://img.shields.io/badge/-FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
+
+### **Machine Learning & Deep Learning**
+SOON!!!!
+
+### **Data Analysis & Automation**
+![SQL](https://img.shields.io/badge/-SQL-4479A1?style=flat&logo=postgresql&logoColor=white)
+![MongoDB](https://img.shields.io/badge/-MongoDB-47A248?style=flat&logo=mongodb&logoColor=white)
+![Pandas](https://img.shields.io/badge/-Pandas-150458?style=flat&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/-NumPy-013243?style=flat&logo=numpy&logoColor=white)
+
+
+## 📈 GitHub Stats
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=akankshadhar2&layout=compact&theme=radical)
+---
+## 💼 Project Repositories
+[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=ShauryaSingh1709&repo=Company-10K-Analyzer&theme=radical)](https://github.com/ShauryaSingh1709/PORTFOLIO.)
+[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=akankshadhar2&repo=DINOv2-KAN&theme=radical)](https://github.com/ShauryaSingh1709/Login)
 
 ---
-## 📊 GitHub Stats  
-![Shaurya's GitHub stats](https://github-readme-stats.vercel.app/api?username=ShauryaSingh1709&show_icons=true&theme=radical)  
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=ShauryaSingh1709&layout=compact&theme=radical)  
+
+## 📫 Contact Me
+
+Feel free to reach out for collaboration or just a chat!  
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shaurya2006/)
+[![Email](https://img.shields.io/badge/-Email-D14836?style=flat&logo=gmail&logoColor=white)](mailto:shaurya17092006@gmail.com)
 
 ---
 
-## 🌐 Connect With Me  
-[![GitHub](https://img.shields.io/badge/GitHub-000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ShauryaSingh1709)  
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shaurya2006)  
-[![Gmail](https://img.shields.io/badge/Gmail-d14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:shaurya17092006@gmail.com)  
-
----
-
-## 📝 Quote I Live By  
-> _"Code is like humor. When you have to explain it, it’s bad."_ — Cory House  
-
----
-
-⭐ **If you like my work, consider giving my repositories a star!**  
-
-
-<!--
-**ShauryaSingh1709/ShauryaSingh1709** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Thank you for stopping by! 😊

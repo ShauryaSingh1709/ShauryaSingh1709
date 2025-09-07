@@ -37,7 +37,7 @@ SOON!!!!
 
 
 ## 📈 GitHub Stats
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=akankshadhar2&layout=compact&theme=radical)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ShauryaSingh1709&layout=compact&theme=radical)
 ---
 ## 💼 Project Repositories
 [![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=ShauryaSingh1709&repo=PORTFOLIO.&theme=radical)](https://github.com/ShauryaSingh1709/PORTFOLIO.)

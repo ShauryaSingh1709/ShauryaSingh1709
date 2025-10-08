@@ -41,7 +41,7 @@ SOON!!!!
 ---
 ## 💼 Project Repositories
 [![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=ShauryaSingh1709&repo=PORTFOLIO.&theme=radical)](https://github.com/ShauryaSingh1709/PORTFOLIO.)
-[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=ShauryaSingh1709&repo=Login&theme=radical)](https://github.com/ShauryaSingh1709/Login)
+[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=ShauryaSingh1709&repo=Anime-Gallery&theme=radical)](https://github.com/ShauryaSingh1709/Anime-Gallery)
 
 ---
 

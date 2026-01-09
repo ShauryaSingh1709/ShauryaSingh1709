@@ -39,10 +39,6 @@ SOON!!!!
 ## 📈 GitHub Stats
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ShauryaSingh1709&layout=compact&theme=radical)
 ---
-## 💼 Project Repositories
-[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=ShauryaSingh1709&repo=DaVinci&theme=radical)](https://github.com/ShauryaSingh1709/DaVinci)
-[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=ShauryaSingh1709&repo=PORTFOLIO.&theme=radical)](https://github.com/ShauryaSingh1709/PORTFOLIO.)
-[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=ShauryaSingh1709&repo=Anime-Gallery&theme=radical)](https://github.com/ShauryaSingh1709/Anime-Gallery)
 
 ---
 

@@ -6,7 +6,7 @@
 
 ## 👩‍💻 About Me
 - 🎓 **Education**: Bachelor of Technology in Artificial Intelligence and Data Science from CGC University, Mohali
-- 💼 **Current Role**: Currently Studying  
+- 💼 **Current Role**: Studying  
 - 🏅 **Research Interests**: In Artificial Intelligence and Data Science
 - 🌎 **Location**: Mohali, India  
 

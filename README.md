@@ -5,11 +5,50 @@
 ---
 
 ## 👩‍💻 About Me
-- 🎓 **Education**: Bachelor of Technology in Artificial Intelligence and Data Science from CGC University, Mohali
-- 💼 **Current Role**: Studying  
-- 🏅 **Research Interests**: In Artificial Intelligence and Data Science
-- 🌎 **Location**: India  
+class Shaurya:
 
+    seeking_roles = "AI Engineer & Machine Learning Engineer"
+
+    education = (
+        "B.Tech in Artificial Intelligence and Data Science "
+        "@ CGC University, Mohali"
+    )
+
+    current_location = "India"
+
+    available = "Internships | AI/ML Projects | Open Source Collaboration"
+
+    currently = "Student & AI Builder"
+
+    previously = [
+        "Built Kiko AI  ->  Personal AI Assistant with Voice & Emotion Detection",
+        "Developed AI Scrapers  ->  Automated Image/Data Collection Systems",
+        "Worked on SaaS UI/UX  ->  Figma & Frontend Design Projects",
+    ]
+
+    research = [
+        "Artificial Intelligence",
+        "Data Science & Analytics",
+        "Generative AI & LLMs",
+    ]
+
+    focus = [
+        "LLMs & AI Assistants",
+        "Computer Vision",
+        "Emotion Detection Systems",
+        "Voice AI & Automation",
+        "Full-Stack AI Applications",
+    ]
+
+    def intro(self):
+        return f"""
+Hi, I'm Shaurya 👋
+Currently focused on {self.focus[0]} and building futuristic AI projects.
+        """
+
+
+me = Shaurya()
+print(me.intro())
 ---
 
 ## 🛠️ Tech Skills

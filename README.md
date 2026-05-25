@@ -132,7 +132,7 @@ class Shaurya:
 <tr>
 <td width="50%" valign="top">
 
-### 🔹 [ISL Platform](https://github.com/YOUR_USERNAME/ISL)
+### 🔹 [ISL Platform](https://github.com/ShauryaSingh1709/IndianSignLang)
 
 AI-powered full-stack platform that makes Indian Sign Language (ISL) accessible through real-time gesture recognition, structured lessons, and gamified learning experiences.
 
@@ -146,7 +146,7 @@ AI-powered full-stack platform that makes Indian Sign Language (ISL) accessible 
 
 <td width="50%" valign="top">
 
-### 🔹 [MeowSort](https://github.com/YOUR_USERNAME/MeowSort)
+### 🔹 [MeowSort](https://github.com/ShauryaSingh1709/meowsort)
 
 Lightweight Python sorting library focused on optimized sorting algorithms, clean implementation, and developer-friendly integration.
 
@@ -161,7 +161,7 @@ Lightweight Python sorting library focused on optimized sorting algorithms, clea
 <tr>
 <td width="50%" valign="top">
 
-### 🔹 [PortfolioF1](https://github.com/YOUR_USERNAME/PortfolioF1)
+### 🔹 [PortfolioF1](https://github.com/ShauryaSingh1709/Portfoliof1)
 
 Interactive Formula 1 themed developer portfolio featuring immersive 3D experiences, animated UI components, and cinematic transitions inspired by motorsport aesthetics.
 

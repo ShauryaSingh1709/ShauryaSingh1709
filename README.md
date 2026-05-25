@@ -5,6 +5,8 @@
 ---
 
 ## 👩‍💻 About Me
+
+```python
 class Shaurya:
 
     seeking_roles = "AI Engineer & Machine Learning Engineer"
@@ -50,6 +52,7 @@ Currently focused on {self.focus[0]} and building futuristic AI projects.
 me = Shaurya()
 print(me.intro())
 ---
+```
 
 ## 🛠️ Tech Skills
 

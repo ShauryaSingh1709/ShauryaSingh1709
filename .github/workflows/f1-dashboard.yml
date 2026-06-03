@@ -27,8 +27,8 @@ jobs:
 
       - name: Generate dashboard
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: python generate_dashboard.py
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/dashboard.py
 
       - name: Commit and push
         run: |

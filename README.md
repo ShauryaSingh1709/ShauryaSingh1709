@@ -189,6 +189,15 @@ Collection of AI automation tools and intelligent systems focused on workflow op
 
 ---
 
+##  GitHub Dashboard
+
+<div align="center">
+
+<img src="assets/f1-dashboard.svg" width="100%"/>
+
+</div>
+
+---
 ## 📬 Let's Connect
 
 <div align="center">

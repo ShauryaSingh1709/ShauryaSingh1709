@@ -1,38 +1,46 @@
-name: F1 Dashboard
+name: 🏎️ F1 GitHub Dashboard
 
 on:
   schedule:
-    - cron: "0 */6 * * *"
-
-  workflow_dispatch:
+    - cron: "0 */6 * * *"   # runs every 6 hours
+  workflow_dispatch:        # manual run button
 
 permissions:
   contents: write
 
 jobs:
-  update:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      # 1. Checkout repo
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      # 2. Setup Python
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - run: pip install requests
+      # 3. Install dependency
+      - name: Install requests
+        run: pip install requests
 
-      - run: python scripts/dashboard.py
+      # 4. Run dashboard script
+      - name: Generate F1 SVG Dashboard
+        run: python scripts/dashboard.py
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
-      - name: Commit
+      # 5. Commit & push generated SVG
+      - name: Commit changes
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
 
-          git add .
+          git add assets/
 
-          git commit -m "🏎️ update dashboard" || exit 0
+          git commit -m "🏎️ update F1 dashboard" || exit 0
 
           git push

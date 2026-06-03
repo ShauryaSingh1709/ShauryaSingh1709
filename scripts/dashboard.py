@@ -87,14 +87,24 @@ today = datetime.date.today()
 current_year = today.year
 current_month = today.month
 
+# Month names for display
+month_names_full = [
+    "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE",
+    "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER",
+]
+current_month_name = month_names_full[current_month - 1]
+
 # ---- ACCURATE COMMIT COUNT (Current Year Only) ----
 current_year_commits = 0
+current_month_commits = 0
 for w in weeks:
     for d in w["contributionDays"]:
         try:
             day_date = datetime.date.fromisoformat(d["date"])
             if day_date.year == current_year:
                 current_year_commits += d["contributionCount"]
+                if day_date.month == current_month:
+                    current_month_commits += d["contributionCount"]
         except ValueError:
             pass
 
@@ -106,6 +116,7 @@ private_commits = user["contributionsCollection"].get("restrictedContributionsCo
 print(f"📊 Last 365 days total: {total_365days}")
 print(f"🔒 Private contributions: {private_commits}")
 print(f"📅 Current year ({current_year}) commits: {commits}")
+print(f"📆 Current month ({current_month_name}) commits: {current_month_commits}")
 
 # ---- Languages aggregation ----
 lang_totals = {}
@@ -182,7 +193,6 @@ year_commits = 0
 for dstr, c in all_days:
     try:
         d = datetime.date.fromisoformat(dstr)
-        # Only include current year months up to current month
         if d.year == current_year and d.month <= current_month:
             key = (d.year, d.month)
             monthly[key] = monthly.get(key, 0) + c
@@ -345,9 +355,11 @@ for idx, (label, frac) in enumerate(stop_data):
             f'fill="#8b949e" text-anchor="middle">{stop_labels[idx]}</text>'
         )
 
+# 🏎️ CAR - FLIPPED TO FACE RIGHT (forward direction)
 svg_parts.append(
-    f'<text x="{car_x:.1f}" y="{track_y - 15}" font-size="36" '
-    f'text-anchor="middle">&#x1F3CE;&#xFE0F;</text>'
+    f'<g transform="translate({car_x:.1f}, {track_y - 15}) scale(-1, 1)">'
+    f'<text x="0" y="0" font-size="36" text-anchor="middle">&#x1F3CE;&#xFE0F;</text>'
+    f'</g>'
 )
 svg_parts.append(
     f'<text x="{car_x:.1f}" y="{track_y - 55}" font-size="12" font-weight="bold" '
@@ -508,7 +520,7 @@ if n > 0:
     pts = []
     for i, v in enumerate(month_vals):
         divisor = max(n - 1, 1)
-        px = gx + (gw * i / divisor)
+        px = gx + (gw * i / divisor) if n > 1 else gx + gw / 2
         py = gy + gh - (gh * v / mx_val)
         pts.append((px, py))
 
@@ -541,14 +553,15 @@ for i, k in enumerate(month_keys):
         f'text-anchor="middle">{lbl}</text>'
     )
 
+# 📆 BOTTOM BOX: Now shows CURRENT MONTH commits instead of yearly
 svg_parts.append(
     f'<rect x="{co_x + 25}" y="{co_y + 285}" width="{co_w - 50}" height="45" '
     f'rx="10" fill="#0a0d12" stroke="#21262d"/>'
 )
 svg_parts.append(
     f'<text x="{co_x + co_w / 2:.1f}" y="{co_y + 313}" font-size="14" fill="#fff" '
-    f'text-anchor="middle">TOTAL COMMITS IN {current_year}: '
-    f'<tspan fill="#ff1e1e" font-weight="bold">{year_commits}</tspan></text>'
+    f'text-anchor="middle">TOTAL COMMITS IN {current_month_name}: '
+    f'<tspan fill="#ff1e1e" font-weight="bold">{current_month_commits}</tspan></text>'
 )
 
 # ============== LANGUAGES BREAKDOWN ==============
@@ -701,3 +714,4 @@ with open("assets/f1-dashboard.svg", "w", encoding="utf-8") as f:
 print("✅ Dashboard generated successfully!")
 print(f"  Commits: {commits} | Repos: {repos} | Followers: {followers}")
 print(f"  Progress: {progress_pct}% | Streak: {longest_streak} | Top Lang: {top_language}")
+print(f"  {current_month_name} commits: {current_month_commits}")

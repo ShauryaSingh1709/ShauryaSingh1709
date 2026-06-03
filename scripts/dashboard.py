@@ -4,7 +4,7 @@ import datetime
 import requests
 import sys
 
-# ============== CONFIG ==============
+
 USERNAME = "ShauryaSingh1709"
 TOKEN = os.environ.get("GH_TOKEN")
 GOAL = 3000
@@ -18,7 +18,7 @@ headers = {
     "Content-Type": "application/json",
 }
 
-# ============== GRAPHQL QUERY ==============
+
 query = """
 query($login:String!) {
   user(login:$login) {
@@ -76,25 +76,25 @@ if "data" not in data or data["data"] is None or data["data"]["user"] is None:
 
 user = data["data"]["user"]
 
-# ============== EXTRACT DATA ==============
+
 followers = user["followers"]["totalCount"] or 0
 repos = user["repositories"]["totalCount"] or 0
 calendar = user["contributionsCollection"]["contributionCalendar"]
 weeks = calendar["weeks"]
 
-# Get today's date and current year
+
 today = datetime.date.today()
 current_year = today.year
 current_month = today.month
 
-# Month names for display
+
 month_names_full = [
     "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE",
     "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER",
 ]
 current_month_name = month_names_full[current_month - 1]
 
-# ---- ACCURATE COMMIT COUNT (Current Year Only) ----
+
 current_year_commits = 0
 current_month_commits = 0
 for w in weeks:
@@ -110,7 +110,7 @@ for w in weeks:
 
 commits = current_year_commits
 
-# Debug info (visible in Actions log)
+
 total_365days = calendar["totalContributions"] or 0
 private_commits = user["contributionsCollection"].get("restrictedContributionsCount", 0) or 0
 print(f"📊 Last 365 days total: {total_365days}")
@@ -118,7 +118,7 @@ print(f"🔒 Private contributions: {private_commits}")
 print(f"📅 Current year ({current_year}) commits: {commits}")
 print(f"📆 Current month ({current_month_name}) commits: {current_month_commits}")
 
-# ---- Languages aggregation ----
+
 lang_totals = {}
 lang_colors = {}
 for repo in user["repositories"]["nodes"]:
@@ -146,14 +146,13 @@ if not lang_list:
 top_language = top_langs[0][0] if top_langs else "N/A"
 top_language_pct = (top_langs[0][1] / total_lang * 100) if top_langs else 0
 
-# ---- All days extraction ----
 all_days = []
 for w in weeks:
     for d in w["contributionDays"]:
         all_days.append((d["date"], d["contributionCount"]))
 all_days.sort()
 
-# ---- Streak calculation ----
+
 longest_streak = 0
 cur = 0
 for _, c in all_days:
@@ -163,7 +162,7 @@ for _, c in all_days:
     else:
         cur = 0
 
-# ---- This week commits ----
+
 week_start = today - datetime.timedelta(days=today.weekday())
 this_week = 0
 for dstr, c in all_days:
@@ -174,7 +173,7 @@ for dstr, c in all_days:
     except ValueError:
         pass
 
-# ---- Active days and avg/day (current year only) ----
+
 active_days = 0
 for dstr, c in all_days:
     try:
@@ -186,7 +185,6 @@ for dstr, c in all_days:
 
 avg_per_day = round(commits / max(active_days, 1), 1)
 
-# ---- Monthly commits for line graph (CURRENT YEAR ONLY, up to current month) ----
 monthly = {}
 year_commits = 0
 
@@ -200,7 +198,7 @@ for dstr, c in all_days:
     except ValueError:
         pass
 
-# Ensure all months from Jan to current month are shown (even if 0 commits)
+
 month_keys = []
 for m in range(1, current_month + 1):
     key = (current_year, m)
@@ -210,16 +208,16 @@ for m in range(1, current_month + 1):
 
 month_vals = [monthly[k] for k in month_keys]
 
-# ============== PROGRESS ==============
+
 progress = min(commits / max(GOAL, 1), 1)
 progress_pct = int(progress * 100)
 
-# IST timezone for last updated
+
 ist = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
 now = datetime.datetime.now(ist)
 last_updated = now.strftime("%b %d, %Y %I:%M %p IST")
 
-# ============== BUILD SVG ==============
+
 svg_parts = []
 
 W, H = 1660, 940
@@ -227,7 +225,7 @@ W, H = 1660, 940
 svg_parts.append(f'<svg width="{W}" height="{H}" xmlns="http://www.w3.org/2000/svg" '
                  f'font-family="\'Segoe UI\', Arial, sans-serif">')
 
-# Defs
+
 svg_parts.append('<defs>')
 svg_parts.append(
     '<linearGradient id="redgrad" x1="0" x2="1">'
@@ -243,7 +241,7 @@ svg_parts.append(
 )
 svg_parts.append('</defs>')
 
-# Background
+
 svg_parts.append(f'<rect width="{W}" height="{H}" fill="#010409"/>')
 
 
@@ -256,7 +254,7 @@ def esc(text):
     return str(text).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
-# ============== HEADER ==============
+
 for i in range(3):
     svg_parts.append(
         f'<rect x="{40 + i * 22}" y="28" width="14" height="44" '
@@ -290,7 +288,7 @@ svg_parts.append(
     f'{GOAL:,} COMMITS</text>'
 )
 
-# ============== SEASON PROGRESS PANEL ==============
+
 sp_x, sp_y, sp_w, sp_h = 20, 120, 1090, 250
 svg_parts.append(panel(sp_x, sp_y, sp_w, sp_h))
 svg_parts.append(
@@ -355,7 +353,7 @@ for idx, (label, frac) in enumerate(stop_data):
             f'fill="#8b949e" text-anchor="middle">{stop_labels[idx]}</text>'
         )
 
-# 🏎️ CAR - FLIPPED TO FACE RIGHT (forward direction)
+
 svg_parts.append(
     f'<g transform="translate({car_x:.1f}, {track_y - 15}) scale(-1, 1)">'
     f'<text x="0" y="0" font-size="36" text-anchor="middle">&#x1F3CE;&#xFE0F;</text>'
@@ -370,7 +368,7 @@ svg_parts.append(
     f'{car_x:.1f},{track_y - 37}" fill="#ff1e1e"/>'
 )
 
-# ============== QUICK STATS ==============
+
 qs_x, qs_y, qs_w, qs_h = 1130, 120, 510, 250
 svg_parts.append(panel(qs_x, qs_y, qs_w, qs_h))
 svg_parts.append(
@@ -405,7 +403,7 @@ for i, (title, val, sub, col) in enumerate(stat_cards):
         f'<text x="{cx + 15}" y="{cy + 75}" font-size="11" fill="#8b949e">{sub}</text>'
     )
 
-# ============== CONTRIBUTION CALENDAR ==============
+
 cc_x, cc_y, cc_w, cc_h = 20, 390, 545, 350
 svg_parts.append(panel(cc_x, cc_y, cc_w, cc_h))
 svg_parts.append(
@@ -488,7 +486,6 @@ for i, (title, val, sub, col) in enumerate(metrics):
         f'<text x="{mx + 70}" y="{my + 55}" font-size="11" fill="#8b949e">{sub}</text>'
     )
 
-# ============== COMMITS OVER TIME ==============
 co_x, co_y, co_w, co_h = 580, 390, 510, 350
 svg_parts.append(panel(co_x, co_y, co_w, co_h))
 svg_parts.append(
@@ -553,7 +550,7 @@ for i, k in enumerate(month_keys):
         f'text-anchor="middle">{lbl}</text>'
     )
 
-# 📆 BOTTOM BOX: Now shows CURRENT MONTH commits instead of yearly
+
 svg_parts.append(
     f'<rect x="{co_x + 25}" y="{co_y + 285}" width="{co_w - 50}" height="45" '
     f'rx="10" fill="#0a0d12" stroke="#21262d"/>'
@@ -564,7 +561,7 @@ svg_parts.append(
     f'<tspan fill="#ff1e1e" font-weight="bold">{current_month_commits}</tspan></text>'
 )
 
-# ============== LANGUAGES BREAKDOWN ==============
+
 lb_x, lb_y, lb_w, lb_h = 1105, 390, 535, 350
 svg_parts.append(panel(lb_x, lb_y, lb_w, lb_h))
 svg_parts.append(
@@ -637,7 +634,7 @@ svg_parts.append(
     f'fill="#8b949e" text-anchor="middle">Most used languages across repositories</text>'
 )
 
-# ============== ACHIEVEMENTS ==============
+
 ac_x, ac_y, ac_w, ac_h = 20, 760, 1190, 160
 svg_parts.append(panel(ac_x, ac_y, ac_w, ac_h))
 svg_parts.append(
@@ -681,7 +678,7 @@ for i, (title, sub, unlocked, col) in enumerate(achievements):
     )
     svg_parts.append("</g>")
 
-# ============== QUOTE ==============
+
 q_x, q_y, q_w, q_h = 1225, 760, 415, 160
 svg_parts.append(panel(q_x, q_y, q_w, q_h))
 svg_parts.append(
@@ -703,7 +700,7 @@ svg_parts.append(
 
 svg_parts.append("</svg>")
 
-# ============== SAVE ==============
+
 os.makedirs("assets", exist_ok=True)
 
 final_svg = "\n".join(svg_parts)

@@ -82,15 +82,30 @@ repos = user["repositories"]["totalCount"] or 0
 calendar = user["contributionsCollection"]["contributionCalendar"]
 weeks = calendar["weeks"]
 
-# ---- ACCURATE COMMIT COUNT (Public + Private) ----
-public_commits = calendar["totalContributions"] or 0
-private_commits = user["contributionsCollection"].get("restrictedContributionsCount", 0) or 0
-commits = public_commits + private_commits
+# Get today's date and current year
+today = datetime.date.today()
+current_year = today.year
+current_month = today.month
+
+# ---- ACCURATE COMMIT COUNT (Current Year Only) ----
+current_year_commits = 0
+for w in weeks:
+    for d in w["contributionDays"]:
+        try:
+            day_date = datetime.date.fromisoformat(d["date"])
+            if day_date.year == current_year:
+                current_year_commits += d["contributionCount"]
+        except ValueError:
+            pass
+
+commits = current_year_commits
 
 # Debug info (visible in Actions log)
-print(f"📊 Public contributions: {public_commits}")
+total_365days = calendar["totalContributions"] or 0
+private_commits = user["contributionsCollection"].get("restrictedContributionsCount", 0) or 0
+print(f"📊 Last 365 days total: {total_365days}")
 print(f"🔒 Private contributions: {private_commits}")
-print(f"✅ Total commits: {commits}")
+print(f"📅 Current year ({current_year}) commits: {commits}")
 
 # ---- Languages aggregation ----
 lang_totals = {}
@@ -138,7 +153,6 @@ for _, c in all_days:
         cur = 0
 
 # ---- This week commits ----
-today = datetime.date.today()
 week_start = today - datetime.timedelta(days=today.weekday())
 this_week = 0
 for dstr, c in all_days:
@@ -149,28 +163,41 @@ for dstr, c in all_days:
     except ValueError:
         pass
 
-# ---- Active days and avg/day ----
-active_days = sum(1 for _, c in all_days if c > 0)
-avg_per_day = round(commits / max(active_days, 1), 1)
-
-# ---- Monthly commits for line graph ----
-monthly = {}
-year_commits = 0
+# ---- Active days and avg/day (current year only) ----
+active_days = 0
 for dstr, c in all_days:
     try:
         d = datetime.date.fromisoformat(dstr)
-        key = (d.year, d.month)
-        monthly[key] = monthly.get(key, 0) + c
-        if d.year == today.year:
+        if d.year == current_year and c > 0:
+            active_days += 1
+    except ValueError:
+        pass
+
+avg_per_day = round(commits / max(active_days, 1), 1)
+
+# ---- Monthly commits for line graph (CURRENT YEAR ONLY, up to current month) ----
+monthly = {}
+year_commits = 0
+
+for dstr, c in all_days:
+    try:
+        d = datetime.date.fromisoformat(dstr)
+        # Only include current year months up to current month
+        if d.year == current_year and d.month <= current_month:
+            key = (d.year, d.month)
+            monthly[key] = monthly.get(key, 0) + c
             year_commits += c
     except ValueError:
         pass
 
-# Add private commits proportionally to year_commits if same year
-if private_commits > 0 and public_commits > 0:
-    year_commits = int(year_commits * (commits / public_commits))
+# Ensure all months from Jan to current month are shown (even if 0 commits)
+month_keys = []
+for m in range(1, current_month + 1):
+    key = (current_year, m)
+    month_keys.append(key)
+    if key not in monthly:
+        monthly[key] = 0
 
-month_keys = sorted(monthly.keys())[-7:]
 month_vals = [monthly[k] for k in month_keys]
 
 # ============== PROGRESS ==============
@@ -258,7 +285,7 @@ sp_x, sp_y, sp_w, sp_h = 20, 120, 1090, 250
 svg_parts.append(panel(sp_x, sp_y, sp_w, sp_h))
 svg_parts.append(
     f'<text x="{sp_x + 25}" y="{sp_y + 35}" font-size="16" font-weight="bold" '
-    f'fill="#fff" letter-spacing="1">SEASON PROGRESS</text>'
+    f'fill="#fff" letter-spacing="1">SEASON {current_year} PROGRESS</text>'
 )
 svg_parts.append(
     f'<text x="{sp_x + 25}" y="{sp_y + 95}" font-size="56" font-weight="bold" '
@@ -485,15 +512,16 @@ if n > 0:
         py = gy + gh - (gh * v / mx_val)
         pts.append((px, py))
 
-    line_path = "M " + " L ".join(f"{x:.1f} {y:.1f}" for x, y in pts)
-    area_path = (
-        line_path
-        + f" L {pts[-1][0]:.1f} {gy + gh} L {pts[0][0]:.1f} {gy + gh} Z"
-    )
-    svg_parts.append(f'<path d="{area_path}" fill="url(#linegrad)"/>')
-    svg_parts.append(
-        f'<path d="{line_path}" fill="none" stroke="#ff1e1e" stroke-width="2.5"/>'
-    )
+    if len(pts) > 1:
+        line_path = "M " + " L ".join(f"{x:.1f} {y:.1f}" for x, y in pts)
+        area_path = (
+            line_path
+            + f" L {pts[-1][0]:.1f} {gy + gh} L {pts[0][0]:.1f} {gy + gh} Z"
+        )
+        svg_parts.append(f'<path d="{area_path}" fill="url(#linegrad)"/>')
+        svg_parts.append(
+            f'<path d="{line_path}" fill="none" stroke="#ff1e1e" stroke-width="2.5"/>'
+        )
 
     for px, py in pts:
         svg_parts.append(
@@ -506,7 +534,7 @@ month_names = [
 ]
 for i, k in enumerate(month_keys):
     divisor = max(n - 1, 1)
-    px = gx + (gw * i / divisor)
+    px = gx + (gw * i / divisor) if n > 1 else gx + gw / 2
     lbl = f"{month_names[k[1] - 1]} '{str(k[0])[2:]}"
     svg_parts.append(
         f'<text x="{px:.1f}" y="{gy + gh + 20}" font-size="10" fill="#8b949e" '
@@ -519,7 +547,7 @@ svg_parts.append(
 )
 svg_parts.append(
     f'<text x="{co_x + co_w / 2:.1f}" y="{co_y + 313}" font-size="14" fill="#fff" '
-    f'text-anchor="middle">TOTAL COMMITS IN {today.year}: '
+    f'text-anchor="middle">TOTAL COMMITS IN {current_year}: '
     f'<tspan fill="#ff1e1e" font-weight="bold">{year_commits}</tspan></text>'
 )
 
@@ -649,15 +677,15 @@ svg_parts.append(
 )
 svg_parts.append(
     f'<text x="{q_x + 70}" y="{q_y + 70}" font-size="16" font-style="italic" '
-    f'fill="#fff">The best driver improves</text>'
+    f'fill="#fff">You need to keep pushing,</text>'
 )
 svg_parts.append(
     f'<text x="{q_x + 70}" y="{q_y + 95}" font-size="16" font-style="italic" '
-    f'fill="#fff">when it matters the most.</text>'
+    f'fill="#fff">never give up. Smooth Operator.</text>'
 )
 svg_parts.append(
     f'<text x="{q_x + q_w - 30}" y="{q_y + 130}" font-size="13" fill="#ff1e1e" '
-    f'text-anchor="end">- Ayrton Senna</text>'
+    f'text-anchor="end">- Carlos Sainz</text>'
 )
 
 svg_parts.append("</svg>")

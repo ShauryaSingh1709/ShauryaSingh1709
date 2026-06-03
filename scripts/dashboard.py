@@ -46,6 +46,11 @@ query($login:String!) {
           }
         }
       }
+      restrictedContributionsCount
+      totalCommitContributions
+      totalIssueContributions
+      totalPullRequestContributions
+      totalPullRequestReviewContributions
     }
   }
 }
@@ -75,8 +80,17 @@ user = data["data"]["user"]
 followers = user["followers"]["totalCount"] or 0
 repos = user["repositories"]["totalCount"] or 0
 calendar = user["contributionsCollection"]["contributionCalendar"]
-commits = calendar["totalContributions"] or 0
 weeks = calendar["weeks"]
+
+# ---- ACCURATE COMMIT COUNT (Public + Private) ----
+public_commits = calendar["totalContributions"] or 0
+private_commits = user["contributionsCollection"].get("restrictedContributionsCount", 0) or 0
+commits = public_commits + private_commits
+
+# Debug info (visible in Actions log)
+print(f"📊 Public contributions: {public_commits}")
+print(f"🔒 Private contributions: {private_commits}")
+print(f"✅ Total commits: {commits}")
 
 # ---- Languages aggregation ----
 lang_totals = {}
@@ -100,7 +114,6 @@ for name, size in top_langs:
 if others > 0:
     lang_list.append(("Others", others / total_lang * 100, "#8b949e"))
 
-# Fallback if no languages found
 if not lang_list:
     lang_list = [("No Data", 100, "#8b949e")]
 
@@ -153,6 +166,10 @@ for dstr, c in all_days:
     except ValueError:
         pass
 
+# Add private commits proportionally to year_commits if same year
+if private_commits > 0 and public_commits > 0:
+    year_commits = int(year_commits * (commits / public_commits))
+
 month_keys = sorted(monthly.keys())[-7:]
 month_vals = [monthly[k] for k in month_keys]
 
@@ -160,8 +177,10 @@ month_vals = [monthly[k] for k in month_keys]
 progress = min(commits / max(GOAL, 1), 1)
 progress_pct = int(progress * 100)
 
-now = datetime.datetime.now()
-last_updated = now.strftime("%b %d, %Y %I:%M %p")
+# IST timezone for last updated
+ist = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
+now = datetime.datetime.now(ist)
+last_updated = now.strftime("%b %d, %Y %I:%M %p IST")
 
 # ============== BUILD SVG ==============
 svg_parts = []
@@ -197,7 +216,6 @@ def panel(x, y, w, h, rx=14):
 
 
 def esc(text):
-    """Escape XML special characters"""
     return str(text).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
@@ -217,23 +235,21 @@ svg_parts.append(
     'RACING THROUGH CODE. WINNING EVERY COMMIT.</text>'
 )
 
-# Last updated panel
-svg_parts.append(panel(1080, 22, 290, 64))
+svg_parts.append(panel(1050, 22, 330, 64))
 svg_parts.append(
-    '<text x="1140" y="50" font-size="12" fill="#8b949e">LAST UPDATED</text>'
+    '<text x="1110" y="50" font-size="12" fill="#8b949e">LAST UPDATED</text>'
 )
 svg_parts.append(
-    f'<text x="1140" y="72" font-size="15" font-weight="bold" fill="#fff">'
+    f'<text x="1110" y="72" font-size="14" font-weight="bold" fill="#fff">'
     f'{esc(last_updated)}</text>'
 )
 
-# Season goal panel
-svg_parts.append(panel(1385, 22, 240, 64))
+svg_parts.append(panel(1395, 22, 230, 64))
 svg_parts.append(
-    '<text x="1445" y="50" font-size="12" fill="#8b949e">SEASON GOAL</text>'
+    '<text x="1455" y="50" font-size="12" fill="#8b949e">SEASON GOAL</text>'
 )
 svg_parts.append(
-    f'<text x="1445" y="72" font-size="15" font-weight="bold" fill="#fff">'
+    f'<text x="1455" y="72" font-size="15" font-weight="bold" fill="#fff">'
     f'{GOAL:,} COMMITS</text>'
 )
 
@@ -262,24 +278,20 @@ svg_parts.append(
     f'The podium awaits.</text>'
 )
 
-# Race track
 track_x1 = sp_x + 270
 track_x2 = sp_x + 1050
 track_y = sp_y + 145
 car_x = track_x1 + (track_x2 - track_x1) * progress
 
-# Red completed line
 svg_parts.append(
     f'<line x1="{track_x1}" y1="{track_y}" x2="{car_x:.1f}" y2="{track_y}" '
     f'stroke="#ff1e1e" stroke-width="4"/>'
 )
-# Grey remaining line
 svg_parts.append(
     f'<line x1="{car_x:.1f}" y1="{track_y}" x2="{track_x2}" y2="{track_y}" '
     f'stroke="#30363d" stroke-width="4"/>'
 )
 
-# Pit stops
 stop_data = [
     ("START", 0), ("750", 0.25), ("1,500", 0.5),
     ("2,250", 0.75), ("3,000", 1.0),
@@ -306,12 +318,10 @@ for idx, (label, frac) in enumerate(stop_data):
             f'fill="#8b949e" text-anchor="middle">{stop_labels[idx]}</text>'
         )
 
-# Car emoji - use text
 svg_parts.append(
     f'<text x="{car_x:.1f}" y="{track_y - 15}" font-size="36" '
     f'text-anchor="middle">&#x1F3CE;&#xFE0F;</text>'
 )
-# YOU ARE HERE label
 svg_parts.append(
     f'<text x="{car_x:.1f}" y="{track_y - 55}" font-size="12" font-weight="bold" '
     f'fill="#ff1e1e" text-anchor="middle">YOU ARE HERE</text>'
@@ -364,7 +374,6 @@ svg_parts.append(
     f'fill="#fff" letter-spacing="1">CONTRIBUTION CALENDAR</text>'
 )
 
-# Heatmap
 cell = 7
 gap = 2
 grid_x = cc_x + 30
@@ -397,7 +406,6 @@ for wi, w in enumerate(recent_weeks):
             f'fill="{heat_color(d["contributionCount"])}"/>'
         )
 
-# Legend row
 ly = grid_y + 7 * (cell + gap) + 15
 svg_parts.append(
     f'<text x="{grid_x}" y="{ly + 8}" font-size="11" fill="#8b949e">Less</text>'
@@ -412,7 +420,6 @@ svg_parts.append(
     f'<text x="{grid_x + 115}" y="{ly + 8}" font-size="11" fill="#8b949e">More</text>'
 )
 
-# Contribution metrics
 mt_y = cc_y + 220
 svg_parts.append(
     f'<text x="{cc_x + 25}" y="{mt_y}" font-size="13" font-weight="bold" '
@@ -450,7 +457,6 @@ svg_parts.append(
     f'fill="#fff" letter-spacing="1">COMMITS OVER TIME</text>'
 )
 
-# Line chart
 gx = co_x + 55
 gy = co_y + 60
 gw = co_w - 80
@@ -458,7 +464,6 @@ gh = 175
 mx_val = max(month_vals) if month_vals else 1
 mx_val = max(mx_val, 1)
 
-# Grid lines
 for i in range(5):
     yy = gy + gh - (gh * i / 4)
     val = int(mx_val * i / 4)
@@ -471,7 +476,6 @@ for i in range(5):
         f'text-anchor="end">{val}</text>'
     )
 
-# Build chart path
 n = len(month_vals)
 if n > 0:
     pts = []
@@ -491,13 +495,11 @@ if n > 0:
         f'<path d="{line_path}" fill="none" stroke="#ff1e1e" stroke-width="2.5"/>'
     )
 
-    # Dots on data points
     for px, py in pts:
         svg_parts.append(
             f'<circle cx="{px:.1f}" cy="{py:.1f}" r="3" fill="#ff1e1e"/>'
         )
 
-# X-axis labels
 month_names = [
     "Jan", "Feb", "Mar", "Apr", "May", "Jun",
     "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
@@ -511,7 +513,6 @@ for i, k in enumerate(month_keys):
         f'text-anchor="middle">{lbl}</text>'
     )
 
-# Year total box
 svg_parts.append(
     f'<rect x="{co_x + 25}" y="{co_y + 285}" width="{co_w - 50}" height="45" '
     f'rx="10" fill="#0a0d12" stroke="#21262d"/>'
@@ -530,7 +531,6 @@ svg_parts.append(
     f'fill="#fff" letter-spacing="1">&lt;/&gt;  LANGUAGES BREAKDOWN</text>'
 )
 
-# Donut chart
 donut_cx = lb_x + 130
 donut_cy = lb_y + 165
 R = 75
@@ -547,7 +547,6 @@ for name, pct, color in lang_list:
     if pct <= 0:
         continue
     sweep = pct / 100 * 360
-    # Clamp sweep to avoid full-circle SVG arc issue
     sweep = min(sweep, 359.99)
     end_angle = start_angle + sweep
     x1, y1 = polar_xy(donut_cx, donut_cy, R, start_angle)
@@ -563,7 +562,6 @@ for name, pct, color in lang_list:
     svg_parts.append(f'<path d="{d}" fill="{color}"/>')
     start_angle = end_angle
 
-# Center text
 svg_parts.append(
     f'<text x="{donut_cx}" y="{donut_cy - 8}" font-size="10" fill="#8b949e" '
     f'text-anchor="middle">TOP LANGUAGE</text>'
@@ -577,7 +575,6 @@ svg_parts.append(
     f'text-anchor="middle">{top_language_pct:.1f}%</text>'
 )
 
-# Language legend
 leg_x = lb_x + 270
 leg_y = lb_y + 70
 for i, (name, pct, color) in enumerate(lang_list):
@@ -673,6 +670,6 @@ final_svg = "\n".join(svg_parts)
 with open("assets/f1-dashboard.svg", "w", encoding="utf-8") as f:
     f.write(final_svg)
 
-print("Dashboard generated successfully!")
+print("✅ Dashboard generated successfully!")
 print(f"  Commits: {commits} | Repos: {repos} | Followers: {followers}")
 print(f"  Progress: {progress_pct}% | Streak: {longest_streak} | Top Lang: {top_language}")

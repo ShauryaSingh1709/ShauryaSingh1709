@@ -11,18 +11,18 @@
 <text x="40" y="92" font-size="18" letter-spacing="3" fill="#8b949e">RACING THROUGH CODE. WINNING EVERY COMMIT.</text>
 <rect x="1050" y="22" width="330" height="64" rx="14" fill="#0d1117" stroke="#21262d" stroke-width="1.5"/>
 <text x="1110" y="50" font-size="12" fill="#8b949e">LAST UPDATED</text>
-<text x="1110" y="72" font-size="14" font-weight="bold" fill="#fff">Jun 09, 2026 07:36 AM IST</text>
+<text x="1110" y="72" font-size="14" font-weight="bold" fill="#fff">Jun 09, 2026 12:00 PM IST</text>
 <rect x="1395" y="22" width="230" height="64" rx="14" fill="#0d1117" stroke="#21262d" stroke-width="1.5"/>
 <text x="1455" y="50" font-size="12" fill="#8b949e">SEASON GOAL</text>
 <text x="1455" y="72" font-size="15" font-weight="bold" fill="#fff">3,000 COMMITS</text>
 <rect x="20" y="120" width="1090" height="250" rx="14" fill="#0d1117" stroke="#21262d" stroke-width="1.5"/>
 <text x="45" y="155" font-size="16" font-weight="bold" fill="#fff" letter-spacing="1">SEASON 2026 PROGRESS</text>
-<text x="45" y="215" font-size="56" font-weight="bold" fill="#fff">21%</text>
-<text x="45" y="245" font-size="15"><tspan fill="#ff1e1e" font-weight="bold">659</tspan><tspan fill="#8b949e"> / 3,000 commits</tspan></text>
+<text x="45" y="215" font-size="56" font-weight="bold" fill="#fff">22%</text>
+<text x="45" y="245" font-size="15"><tspan fill="#ff1e1e" font-weight="bold">663</tspan><tspan fill="#8b949e"> / 3,000 commits</tspan></text>
 <text x="65" y="290" font-size="13" fill="#fff">Keep pushing!</text>
 <text x="65" y="310" font-size="13" fill="#8b949e">The podium awaits.</text>
-<line x1="290" y1="265" x2="461.3" y2="265" stroke="#ff1e1e" stroke-width="4"/>
-<line x1="461.3" y1="265" x2="1070" y2="265" stroke="#30363d" stroke-width="4"/>
+<line x1="290" y1="265" x2="462.4" y2="265" stroke="#ff1e1e" stroke-width="4"/>
+<line x1="462.4" y1="265" x2="1070" y2="265" stroke="#30363d" stroke-width="4"/>
 <circle cx="290.0" cy="265" r="9" fill="#010409" stroke="#ff1e1e" stroke-width="3"/>
 <text x="290.0" y="300" font-size="12" fill="#fff" font-weight="bold" text-anchor="middle">START</text>
 <circle cx="485.0" cy="265" r="9" fill="#010409" stroke="#30363d" stroke-width="3"/>
@@ -37,14 +37,14 @@
 <circle cx="1070.0" cy="265" r="9" fill="#010409" stroke="#30363d" stroke-width="3"/>
 <text x="1070.0" y="300" font-size="12" fill="#ff1e1e" font-weight="bold" text-anchor="middle">3,000</text>
 <text x="1070.0" y="317" font-size="10" fill="#8b949e" text-anchor="middle">FINISH</text>
-<g transform="translate(461.3, 250) scale(-1, 1)"><text x="0" y="0" font-size="36" text-anchor="middle">&#x1F3CE;&#xFE0F;</text></g>
-<text x="461.3" y="210" font-size="12" font-weight="bold" fill="#ff1e1e" text-anchor="middle">YOU ARE HERE</text>
-<polygon points="453.3,218 469.3,218 461.3,228" fill="#ff1e1e"/>
+<g transform="translate(462.4, 250) scale(-1, 1)"><text x="0" y="0" font-size="36" text-anchor="middle">&#x1F3CE;&#xFE0F;</text></g>
+<text x="462.4" y="210" font-size="12" font-weight="bold" fill="#ff1e1e" text-anchor="middle">YOU ARE HERE</text>
+<polygon points="454.4,218 470.4,218 462.4,228" fill="#ff1e1e"/>
 <rect x="1130" y="120" width="510" height="250" rx="14" fill="#0d1117" stroke="#21262d" stroke-width="1.5"/>
 <text x="1155" y="155" font-size="16" font-weight="bold" fill="#fff" letter-spacing="1">QUICK STATS</text>
 <rect x="1150" y="170" width="158" height="92" rx="10" fill="#0a0d12" stroke="#21262d"/>
 <text x="1165" y="195" font-size="9.5" fill="#8b949e">TOTAL COMMITS</text>
-<text x="1165" y="222" font-size="24" font-weight="bold" fill="#ff4d4d">659</text>
+<text x="1165" y="222" font-size="24" font-weight="bold" fill="#ff4d4d">663</text>
 <text x="1165" y="245" font-size="11" fill="#8b949e">This Season</text>
 <rect x="1316" y="170" width="158" height="92" rx="10" fill="#0a0d12" stroke="#21262d"/>
 <text x="1331" y="195" font-size="9.5" fill="#8b949e">REPOSITORIES</text>
@@ -56,7 +56,7 @@
 <text x="1497" y="245" font-size="11" fill="#8b949e">People</text>
 <rect x="1150" y="270" width="158" height="92" rx="10" fill="#0a0d12" stroke="#21262d"/>
 <text x="1165" y="295" font-size="9.5" fill="#8b949e">CONTRIBUTIONS</text>
-<text x="1165" y="322" font-size="24" font-weight="bold" fill="#3fb950">659</text>
+<text x="1165" y="322" font-size="24" font-weight="bold" fill="#3fb950">663</text>
 <text x="1165" y="345" font-size="11" fill="#8b949e">Total</text>
 <rect x="1316" y="270" width="158" height="92" rx="10" fill="#0a0d12" stroke="#21262d"/>
 <text x="1331" y="295" font-size="9.5" fill="#8b949e">LONGEST STREAK</text>
@@ -64,7 +64,7 @@
 <text x="1331" y="345" font-size="11" fill="#8b949e">Days in a row</text>
 <rect x="1482" y="270" width="158" height="92" rx="10" fill="#0a0d12" stroke="#21262d"/>
 <text x="1497" y="295" font-size="9.5" fill="#8b949e">AVG / DAY</text>
-<text x="1497" y="322" font-size="24" font-weight="bold" fill="#58a6ff">11.2</text>
+<text x="1497" y="322" font-size="24" font-weight="bold" fill="#58a6ff">11.1</text>
 <text x="1497" y="345" font-size="11" fill="#8b949e">Commits</text>
 <rect x="20" y="390" width="545" height="350" rx="14" fill="#0d1117" stroke="#21262d" stroke-width="1.5"/>
 <text x="45" y="425" font-size="16" font-weight="bold" fill="#fff" letter-spacing="1">CONTRIBUTION CALENDAR</text>
@@ -427,7 +427,7 @@
 <rect x="500" y="504" width="7" height="7" rx="2" fill="#0e4429"/>
 <rect x="509" y="450" width="7" height="7" rx="2" fill="#161b22"/>
 <rect x="509" y="459" width="7" height="7" rx="2" fill="#0e4429"/>
-<rect x="509" y="468" width="7" height="7" rx="2" fill="#161b22"/>
+<rect x="509" y="468" width="7" height="7" rx="2" fill="#0e4429"/>
 <text x="50" y="536" font-size="11" fill="#8b949e">Less</text>
 <rect x="88" y="528" width="7" height="7" rx="2" fill="#161b22"/>
 <rect x="102" y="528" width="7" height="7" rx="2" fill="#0e4429"/>
@@ -438,15 +438,15 @@
 <text x="45" y="610" font-size="13" font-weight="bold" fill="#fff" letter-spacing="1">CONTRIBUTION METRICS</text>
 <rect x="45" y="625" width="160" height="78" rx="10" fill="#0a0d12" stroke="#21262d"/>
 <text x="60" y="650" font-size="9.5" fill="#8b949e">DAYS ACTIVE</text>
-<text x="60" y="680" font-size="22" font-weight="bold" fill="#fff">59</text>
+<text x="60" y="680" font-size="22" font-weight="bold" fill="#fff">60</text>
 <text x="115" y="680" font-size="11" fill="#8b949e">Days</text>
 <rect x="213" y="625" width="160" height="78" rx="10" fill="#0a0d12" stroke="#21262d"/>
 <text x="228" y="650" font-size="9.5" fill="#8b949e">AVG / DAY</text>
-<text x="228" y="680" font-size="22" font-weight="bold" fill="#58a6ff">11.2</text>
+<text x="228" y="680" font-size="22" font-weight="bold" fill="#58a6ff">11.1</text>
 <text x="283" y="680" font-size="11" fill="#8b949e">Commits</text>
 <rect x="381" y="625" width="160" height="78" rx="10" fill="#0a0d12" stroke="#21262d"/>
 <text x="396" y="650" font-size="9.5" fill="#8b949e">THIS WEEK</text>
-<text x="396" y="680" font-size="22" font-weight="bold" fill="#3fb950">7</text>
+<text x="396" y="680" font-size="22" font-weight="bold" fill="#3fb950">11</text>
 <text x="451" y="680" font-size="11" fill="#8b949e">Commits</text>
 <rect x="580" y="390" width="510" height="350" rx="14" fill="#0d1117" stroke="#21262d" stroke-width="1.5"/>
 <text x="605" y="425" font-size="16" font-weight="bold" fill="#fff" letter-spacing="1">COMMITS OVER TIME</text>
@@ -460,14 +460,14 @@
 <text x="625" y="497.8" font-size="10" fill="#8b949e" text-anchor="end">209</text>
 <line x1="635" y1="450.0" x2="1065" y2="450.0" stroke="#21262d" stroke-width="1"/>
 <text x="625" y="454.0" font-size="10" fill="#8b949e" text-anchor="end">279</text>
-<path d="M 635.0 596.1 L 721.0 450.0 L 807.0 557.3 L 893.0 571.7 L 979.0 589.2 L 1065.0 572.3 L 1065.0 625 L 635.0 625 Z" fill="url(#linegrad)"/>
-<path d="M 635.0 596.1 L 721.0 450.0 L 807.0 557.3 L 893.0 571.7 L 979.0 589.2 L 1065.0 572.3" fill="none" stroke="#ff1e1e" stroke-width="2.5"/>
+<path d="M 635.0 596.1 L 721.0 450.0 L 807.0 557.3 L 893.0 571.7 L 979.0 589.2 L 1065.0 569.8 L 1065.0 625 L 635.0 625 Z" fill="url(#linegrad)"/>
+<path d="M 635.0 596.1 L 721.0 450.0 L 807.0 557.3 L 893.0 571.7 L 979.0 589.2 L 1065.0 569.8" fill="none" stroke="#ff1e1e" stroke-width="2.5"/>
 <circle cx="635.0" cy="596.1" r="3" fill="#ff1e1e"/>
 <circle cx="721.0" cy="450.0" r="3" fill="#ff1e1e"/>
 <circle cx="807.0" cy="557.3" r="3" fill="#ff1e1e"/>
 <circle cx="893.0" cy="571.7" r="3" fill="#ff1e1e"/>
 <circle cx="979.0" cy="589.2" r="3" fill="#ff1e1e"/>
-<circle cx="1065.0" cy="572.3" r="3" fill="#ff1e1e"/>
+<circle cx="1065.0" cy="569.8" r="3" fill="#ff1e1e"/>
 <text x="635.0" y="645" font-size="10" fill="#8b949e" text-anchor="middle">Jan '26</text>
 <text x="721.0" y="645" font-size="10" fill="#8b949e" text-anchor="middle">Feb '26</text>
 <text x="807.0" y="645" font-size="10" fill="#8b949e" text-anchor="middle">Mar '26</text>
@@ -475,12 +475,12 @@
 <text x="979.0" y="645" font-size="10" fill="#8b949e" text-anchor="middle">May '26</text>
 <text x="1065.0" y="645" font-size="10" fill="#8b949e" text-anchor="middle">Jun '26</text>
 <rect x="605" y="675" width="460" height="45" rx="10" fill="#0a0d12" stroke="#21262d"/>
-<text x="835.0" y="703" font-size="14" fill="#fff" text-anchor="middle">TOTAL COMMITS IN JUNE: <tspan fill="#ff1e1e" font-weight="bold">84</tspan></text>
+<text x="835.0" y="703" font-size="14" fill="#fff" text-anchor="middle">TOTAL COMMITS IN JUNE: <tspan fill="#ff1e1e" font-weight="bold">88</tspan></text>
 <rect x="1105" y="390" width="535" height="350" rx="14" fill="#0d1117" stroke="#21262d" stroke-width="1.5"/>
 <text x="1130" y="425" font-size="16" font-weight="bold" fill="#fff" letter-spacing="1">&lt;/&gt;  LANGUAGES BREAKDOWN</text>
 <path d="M 1235.00 480.00 A 75 75 0 1 1 1193.28 492.67 L 1209.97 517.60 A 45 45 0 1 0 1235.00 510.00 Z" fill="#3572A5"/>
-<path d="M 1193.28 492.67 A 75 75 0 0 1 1205.20 486.17 L 1217.12 513.70 A 45 45 0 0 0 1209.97 517.60 Z" fill="#663399"/>
-<path d="M 1205.20 486.17 A 75 75 0 0 1 1217.66 482.03 L 1224.60 511.22 A 45 45 0 0 0 1217.12 513.70 Z" fill="#f1e05a"/>
+<path d="M 1193.28 492.67 A 75 75 0 0 1 1205.21 486.17 L 1217.12 513.70 A 45 45 0 0 0 1209.97 517.60 Z" fill="#663399"/>
+<path d="M 1205.21 486.17 A 75 75 0 0 1 1217.66 482.03 L 1224.60 511.22 A 45 45 0 0 0 1217.12 513.70 Z" fill="#f1e05a"/>
 <path d="M 1217.66 482.03 A 75 75 0 0 1 1228.74 480.26 L 1231.24 510.16 A 45 45 0 0 0 1224.60 511.22 Z" fill="#e34c26"/>
 <path d="M 1228.74 480.26 A 75 75 0 0 1 1232.45 480.04 L 1233.47 510.03 A 45 45 0 0 0 1231.24 510.16 Z" fill="#3178c6"/>
 <path d="M 1232.45 480.04 A 75 75 0 0 1 1235.00 480.00 L 1235.00 510.00 A 45 45 0 0 0 1233.47 510.03 Z" fill="#8b949e"/>

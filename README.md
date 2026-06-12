@@ -95,14 +95,14 @@ class Shaurya:
 ![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
 
-
 **ML / AI**
-
 
 ![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
 
+**Data & Web Scraping**
 
+![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-8B4513?style=for-the-badge&logo=python&logoColor=white)
 
 **Backend / Cloud**
 

@@ -184,8 +184,6 @@ Interactive Formula 1 themed developer portfolio featuring immersive 3D experien
 
 <td width="50%" valign="top">
 
-<td width="50%" valign="top">
-
 ### 🔹 [RoyaleForge](https://github.com/ShauryaSingh1709/Clash-Royale)
 
 Advanced Clash Royale analytics ecosystem featuring machine learning predictions, deck intelligence, card synergy modeling, and competitive meta exploration powered by Flask, Data Science, and modern web technologies.

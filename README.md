@@ -130,9 +130,7 @@ class Shaurya:
 **DevOps & Tools**
 
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![Jira](https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=jira&logoColor=white)
-![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
-![Selenium](https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white)
+
 
 </div>
 
@@ -197,17 +195,6 @@ Advanced Clash Royale analytics ecosystem featuring machine learning predictions
 ![Scikit--Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white)
 ![Machine Learning](https://img.shields.io/badge/Machine_Learning-FF6F00?style=flat-square)
-
-</td>
-
-### 🔹 AI Automation Projects
-
-Collection of AI automation tools and intelligent systems focused on workflow optimization, data processing, and smart integrations.
-
-![AI](https://img.shields.io/badge/AI-4338ca?style=flat-square)
-![Automation](https://img.shields.io/badge/Automation-0891b2?style=flat-square)
-![Machine Learning](https://img.shields.io/badge/Machine_Learning-7c3aed?style=flat-square)
-![Data Science](https://img.shields.io/badge/Data_Science-0284c7?style=flat-square)
 
 </td>
 </tr>

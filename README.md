@@ -49,23 +49,30 @@ class Shaurya:
         "and machine learning systems"
     )
 
-    projects = [
-        (
-            "Kiko AI  ->  Personal AI assistant focused on "
-            "voice interaction, memory, and emotion-aware responses"
-        ),
+   projects = [
+    (
+        "Kiko AI  ->  Personal AI assistant focused on "
+        "voice interaction, memory, and emotion-aware responses"
+    ),
 
-        (
-            "ISL Platform  ->  AI-powered platform designed "
-            "to improve accessibility through real-time "
-            "Indian Sign Language recognition and learning"
-        ),
+    (
+        "ISL Platform  ->  AI-powered platform designed "
+        "to improve accessibility through real-time "
+        "Indian Sign Language recognition and learning"
+    ),
 
-        (
-            "MeowSort Library  ->  Lightweight Python library "
-            "implementing optimized sorting algorithms"
-        ),
-    ]
+    (
+        "RoyaleForge  ->  Open-source Clash Royale analytics "
+        "platform featuring machine learning predictions, "
+        "deck intelligence, card synergy analysis, and "
+        "competitive meta exploration"
+    ),
+
+    (
+        "MeowSort Library  ->  Lightweight Python library "
+        "implementing optimized sorting algorithms"
+    ),
+]
 
     interests = [
         "Machine Learning & Deep Learning",
@@ -99,6 +106,13 @@ class Shaurya:
 
 ![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
+
+**Data Science**
+
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge)
 
 **Data & Web Scraping**
 
@@ -171,6 +185,20 @@ Interactive Formula 1 themed developer portfolio featuring immersive 3D experien
 </td>
 
 <td width="50%" valign="top">
+
+<td width="50%" valign="top">
+
+### 🔹 [RoyaleForge](https://github.com/ShauryaSingh1709/Clash-Royale)
+
+Advanced Clash Royale analytics ecosystem featuring machine learning predictions, deck intelligence, card synergy modeling, and competitive meta exploration powered by Flask, Data Science, and modern web technologies.
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white)
+![Scikit--Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white)
+![Machine Learning](https://img.shields.io/badge/Machine_Learning-FF6F00?style=flat-square)
+
+</td>
 
 ### 🔹 AI Automation Projects
 

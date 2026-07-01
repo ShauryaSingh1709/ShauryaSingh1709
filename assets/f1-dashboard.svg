@@ -11,7 +11,7 @@
 <text x="40" y="92" font-size="18" letter-spacing="3" fill="#8b949e">RACING THROUGH CODE. WINNING EVERY COMMIT.</text>
 <rect x="1050" y="22" width="330" height="64" rx="14" fill="#0d1117" stroke="#21262d" stroke-width="1.5"/>
 <text x="1110" y="50" font-size="12" fill="#8b949e">LAST UPDATED</text>
-<text x="1110" y="72" font-size="14" font-weight="bold" fill="#fff">Jul 01, 2026 05:28 AM IST</text>
+<text x="1110" y="72" font-size="14" font-weight="bold" fill="#fff">Jul 01, 2026 09:16 AM IST</text>
 <rect x="1395" y="22" width="230" height="64" rx="14" fill="#0d1117" stroke="#21262d" stroke-width="1.5"/>
 <text x="1455" y="50" font-size="12" fill="#8b949e">SEASON GOAL</text>
 <text x="1455" y="72" font-size="15" font-weight="bold" fill="#fff">3,000 COMMITS</text>
@@ -461,22 +461,24 @@
 <text x="625" y="497.8" font-size="10" fill="#8b949e" text-anchor="end">255</text>
 <line x1="635" y1="450.0" x2="1065" y2="450.0" stroke="#21262d" stroke-width="1"/>
 <text x="625" y="454.0" font-size="10" fill="#8b949e" text-anchor="end">341</text>
-<path d="M 635.0 601.4 L 721.0 481.8 L 807.0 569.6 L 893.0 581.4 L 979.0 595.7 L 1065.0 450.0 L 1065.0 625 L 635.0 625 Z" fill="url(#linegrad)"/>
-<path d="M 635.0 601.4 L 721.0 481.8 L 807.0 569.6 L 893.0 581.4 L 979.0 595.7 L 1065.0 450.0" fill="none" stroke="#ff1e1e" stroke-width="2.5"/>
+<path d="M 635.0 601.4 L 706.7 481.8 L 778.3 569.6 L 850.0 581.4 L 921.7 595.7 L 993.3 450.0 L 1065.0 625.0 L 1065.0 625 L 635.0 625 Z" fill="url(#linegrad)"/>
+<path d="M 635.0 601.4 L 706.7 481.8 L 778.3 569.6 L 850.0 581.4 L 921.7 595.7 L 993.3 450.0 L 1065.0 625.0" fill="none" stroke="#ff1e1e" stroke-width="2.5"/>
 <circle cx="635.0" cy="601.4" r="3" fill="#ff1e1e"/>
-<circle cx="721.0" cy="481.8" r="3" fill="#ff1e1e"/>
-<circle cx="807.0" cy="569.6" r="3" fill="#ff1e1e"/>
-<circle cx="893.0" cy="581.4" r="3" fill="#ff1e1e"/>
-<circle cx="979.0" cy="595.7" r="3" fill="#ff1e1e"/>
-<circle cx="1065.0" cy="450.0" r="3" fill="#ff1e1e"/>
+<circle cx="706.7" cy="481.8" r="3" fill="#ff1e1e"/>
+<circle cx="778.3" cy="569.6" r="3" fill="#ff1e1e"/>
+<circle cx="850.0" cy="581.4" r="3" fill="#ff1e1e"/>
+<circle cx="921.7" cy="595.7" r="3" fill="#ff1e1e"/>
+<circle cx="993.3" cy="450.0" r="3" fill="#ff1e1e"/>
+<circle cx="1065.0" cy="625.0" r="3" fill="#ff1e1e"/>
 <text x="635.0" y="645" font-size="10" fill="#8b949e" text-anchor="middle">Jan '26</text>
-<text x="721.0" y="645" font-size="10" fill="#8b949e" text-anchor="middle">Feb '26</text>
-<text x="807.0" y="645" font-size="10" fill="#8b949e" text-anchor="middle">Mar '26</text>
-<text x="893.0" y="645" font-size="10" fill="#8b949e" text-anchor="middle">Apr '26</text>
-<text x="979.0" y="645" font-size="10" fill="#8b949e" text-anchor="middle">May '26</text>
-<text x="1065.0" y="645" font-size="10" fill="#8b949e" text-anchor="middle">Jun '26</text>
+<text x="706.7" y="645" font-size="10" fill="#8b949e" text-anchor="middle">Feb '26</text>
+<text x="778.3" y="645" font-size="10" fill="#8b949e" text-anchor="middle">Mar '26</text>
+<text x="850.0" y="645" font-size="10" fill="#8b949e" text-anchor="middle">Apr '26</text>
+<text x="921.7" y="645" font-size="10" fill="#8b949e" text-anchor="middle">May '26</text>
+<text x="993.3" y="645" font-size="10" fill="#8b949e" text-anchor="middle">Jun '26</text>
+<text x="1065.0" y="645" font-size="10" fill="#8b949e" text-anchor="middle">Jul '26</text>
 <rect x="605" y="675" width="460" height="45" rx="10" fill="#0a0d12" stroke="#21262d"/>
-<text x="835.0" y="703" font-size="14" fill="#fff" text-anchor="middle">TOTAL COMMITS IN JUNE: <tspan fill="#ff1e1e" font-weight="bold">341</tspan></text>
+<text x="835.0" y="703" font-size="14" fill="#fff" text-anchor="middle">TOTAL COMMITS IN JULY: <tspan fill="#ff1e1e" font-weight="bold">0</tspan></text>
 <rect x="1105" y="390" width="535" height="350" rx="14" fill="#0d1117" stroke="#21262d" stroke-width="1.5"/>
 <text x="1130" y="425" font-size="16" font-weight="bold" fill="#fff" letter-spacing="1">&lt;/&gt;  LANGUAGES BREAKDOWN</text>
 <path d="M 1235.00 480.00 A 75 75 0 1 1 1162.14 537.22 L 1191.28 544.33 A 45 45 0 1 0 1235.00 510.00 Z" fill="#3572A5"/>
